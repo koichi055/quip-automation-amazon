@@ -1,4 +1,4 @@
-# 🤖 Quip Spreadsheet Automation — Amazon Connect Defects
+# 🤖 Quip Spreadsheet Automation — Amazon QuickSight
 
 **Automated Python pipeline that replaces a 50-minute daily manual process with a 3-minute script execution — saving ~205 hours per year.**
 
@@ -6,7 +6,7 @@
 
 ## 📋 Overview
 
-The GO-AI team at Amazon VAR managed Connect defects through a shared Quip Spreadsheet updated manually once per day, 5 days a week. A team member would download a CSV from QuickSight, clean it, compare it against the Quip, and paste rows manually — a process prone to human error, data lag, and single-person dependency.
+The GO-AI team at Amazon VAR managed quality defects through a shared Quip Spreadsheet updated manually once per day, 5 days a week. A team member would download a CSV from QuickSight, clean it, compare it against the Quip, and paste rows manually — a process prone to human error, data lag, and single-person dependency.
 
 This script fully automates that pipeline: it reads the raw QuickSight export, intelligently compares it against the live Quip sheet, and produces a clean Excel file ready to import — in under 3 minutes.
 
@@ -40,7 +40,7 @@ The script runs in 3 phases:
 - Auto-detects the week number from the `Week` column
 
 ### Phase 2 — Intelligent Quip Comparison
-- Connects to the Quip API and fetches the spreadsheet HTML
+- Raws to the Quip API and fetches the spreadsheet HTML
 - Auto-identifies the correct weekly sheet (e.g. `Week 11 (2026)`) by matching the week from the CSV
 - Compares data using 3 logical rules:
   1. **New rows** — Job IDs in CSV but not in Quip → added to Excel for import
@@ -179,5 +179,5 @@ Never commit your `QUIP_TOKEN` to a public repository. Use a `.env` file or envi
 
 ## 👤 Author
 
-**Koichi Rodriguez** — Data Analyst @ Amazon VAR | GO-AI Team  
-Built with Python + Atlas (GO-AI Team AI Assistant) | March 2026
+**Koichi Rodriguez** — Data Analyst
+Built with Python + Atlas | March 2026
